@@ -23,11 +23,14 @@ void loop() {
     led++;
 
     if (led == 7){
-      
+      Serial.print("LED == 7\n");
     }
   }
-
+  
+  switchState = digitalRead(switchPin);
+  
   if (switchState != previousSwitchState) {
+    Serial.print( "\t changed position \n" );
     for (int x = 2; x < 8; x++){
       digitalWrite(x, LOW);
     }
